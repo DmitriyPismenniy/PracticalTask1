@@ -22,13 +22,9 @@ void Task1()
             count++;            
         }       
     }
+
     Console.WriteLine("Вы ввели следующий массив: ");
-    
-    for (int i=0; i < size; i++)
-    {
-        Console.Write($"{arrstring[i]}, ");        
-    }
-    Console.WriteLine("\b\b. ");  
+    PrintArrayStr(arrstring, size);
 
     string[] arr3string = new string[count];
     
@@ -36,11 +32,16 @@ void Task1()
     {
         arr3string[i] = arr2string[i];
     }
+    
     Console.WriteLine("Массив из строк, длина которых меньше либо равна 3 символам: ");
+    PrintArrayStr(arr3string, count);
+}
 
-    for (int i=0; i < count; i++)
+void PrintArrayStr(string[] array, int size)
+{
+    for (int i=0; i < size; i++)
     {
-        Console.Write($"{arr3string[i]}, ");        
+        Console.Write($"{array[i]}, ");        
     }
     Console.WriteLine("\b\b. ");
 }
